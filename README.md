@@ -19,7 +19,7 @@ The project demonstrates practical DevOps concepts including **AWS networking, E
 
 ## 🌐 Live Application
 
-- **Application:** [https://securebank.mohthoufi.me](https://securebank.mohthoufi.me)
+
 - **GitHub Repository:** [SecureBank — Three-Tier AWS DevOps](https://github.com/Mohamedthoufiq31/securebank-3-tier-devops)
 
 The live application is available only while the required AWS resources are running.
