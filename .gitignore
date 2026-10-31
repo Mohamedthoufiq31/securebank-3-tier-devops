@@ -13,3 +13,4 @@ terraform/*.tfstate*
 terraform/*.tfvars
 *.pem
 bad-login.json
+*.tsbuildinfo
