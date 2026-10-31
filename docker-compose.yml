@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-securebank}
+      POSTGRES_USER: ${POSTGRES_USER:-securebank}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-securebank-dev-only}
+    ports:
+      - "5432:5432"
+    volumes:
+      - securebank-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    environment:
+      DB_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-securebank}
+      DB_USERNAME: ${POSTGRES_USER:-securebank}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-securebank-dev-only}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@securebank.local}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-ChangeMe-Dev-Only-123!}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:5173}
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      MAIL_FROM: ${MAIL_FROM:-securebank@localhost}
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+volumes:
+  securebank-db:

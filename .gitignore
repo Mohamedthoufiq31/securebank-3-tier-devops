@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+target/
+*.log
+.idea/
+.vscode/*
+!.vscode/settings.json
+terraform/.terraform/
+terraform/*.tfstate*
+terraform/*.tfvars
+*.pem
+bad-login.json

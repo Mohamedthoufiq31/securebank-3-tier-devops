@@ -1,0 +1,104 @@
+@media (max-width: 750px) {
+  .topbar-brand { display: flex; align-items: center; gap: 10px; }
+  .breadcrumbs, .header-links { display: none; }
+  .topbar-user { margin-left: auto; }
+  .app-footer { padding: 25px 18px 17px; }
+  .footer-main { align-items: flex-start; flex-direction: column; gap: 18px; }
+  .footer-links { gap: 15px; flex-wrap: wrap; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; gap: 7px; line-height: 1.5; }
+}
+
+.transfer-empty {
+  max-width: 500px;
+  margin: 20px auto 10px;
+  padding: 28px;
+  text-align: center;
+  border: 1px dashed #e2d6cf;
+  border-radius: 12px;
+  background: #fffaf7;
+}
+
+.transfer-empty .empty-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 13px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--orange);
+  background: #fff0e8;
+}
+
+.transfer-empty h2 {
+  margin-bottom: 7px;
+  font-size: 1.05rem;
+}
+
+.transfer-empty p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+.security-strip{display:flex;align-items:center;gap:10px;background:#edf3e6;border:1px solid #d5e1c9;border-radius:10px;padding:12px 15px;margin:-8px 0 18px;color:#3f6848}.security-strip span:nth-child(2){display:grid;gap:2px}.security-strip b{font-size:.77rem}.security-strip small{font-size:.68rem;color:#71806d}.security-ok{margin-left:auto;text-transform:uppercase;letter-spacing:.08em;font-size:.62rem;font-weight:700}.balance-toggle{background:none;color:#b8c5a5;padding:0 0 0 7px;vertical-align:middle}.beneficiary-error{grid-column:1/-1}
+
+.topbar-actions{display:flex;align-items:center;gap:18px;margin-left:auto}
+.header-controls{display:none}
+.menu-button{display:grid;place-items:center;width:42px;height:42px;border-radius:9px;background:var(--gray);color:var(--ink)}
+.layout-button{display:grid;place-items:center;width:40px;height:40px;border-radius:9px;background:var(--gray);color:var(--ink)}
+.layout-button:hover{color:var(--orange)}
+.menu-button:hover{color:var(--orange)}
+.top-user-wrap{position:relative}
+.topbar-user{border:0;background:transparent;padding:4px 0;cursor:pointer}
+.top-user-menu{position:absolute;right:0;top:calc(100% + 10px);z-index:20;display:grid;gap:3px;min-width:170px;padding:8px;background:var(--charcoal);border:1px solid #405642;border-radius:9px;box-shadow:0 12px 30px #0003}
+.top-user-menu button{display:flex;align-items:center;gap:9px;padding:10px;border-radius:6px;background:transparent;color:#dbe5d9;text-align:left;font-size:.86rem}
+.top-user-menu button:hover{background:#344735;color:#fff}
+.theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--gray);color:var(--ink);font-weight:700;font-size:.78rem}
+.theme-toggle:hover{border-color:var(--orange);color:var(--orange)}
+.topbar-user small{letter-spacing:.04em}
+@media (max-width:750px){
+  .topbar{height:68px;padding:0 16px;gap:12px}
+  .menu-button{width:44px;height:44px;border-radius:10px}
+  .topbar-brand{display:flex}
+  .topbar-actions{gap:8px}
+  .layout-button{width:44px;height:44px}
+  .theme-toggle{width:44px;height:44px;justify-content:center;padding:0}
+  .theme-toggle span{display:none}
+  .topbar-user{gap:5px}
+  .topbar-user>div:nth-child(2){display:none}
+  .topbar-user>svg{display:none}
+  .top-avatar{width:38px;height:38px}
+  .page-content{padding:30px 18px}
+  .page-title h1{font-size:1.75rem}
+  .page-title p{font-size:.98rem}
+  .sidebar{width:min(310px,88vw);flex-basis:min(310px,88vw)}
+  .sidebar nav button{min-height:48px;font-size:.94rem}
+}
+.sidebar-user-toggle{background:transparent!important;color:inherit}
+.sidebar-user-toggle:hover{background:#273628!important}
+.top-user-menu{background:#1b2a1e}
+
+@media (min-width:751px){
+  .sidebar{width:248px;flex-basis:248px;overflow:hidden;transition:width .22s ease,flex-basis .22s ease,padding .22s ease}
+  .nav-collapsed .sidebar{width:0;flex-basis:0;padding-left:0;padding-right:0}
+  .nav-collapsed .sidebar>*{visibility:hidden}
+}
+
+@media (max-width:750px){
+  .sidebar{position:fixed;left:-100%;top:0;bottom:0;z-index:50;overflow-y:auto;transition:left .2s ease;box-shadow:12px 0 30px #0005}
+  .sidebar.mobile-open{left:0}
+  .app-main{width:100%}
+  .header-controls{display:flex}
+}
+
+/* Readable base sizing for the banking workspace. */
+.app-shell{font-size:16px}
+.sidebar nav button{font-size:.96rem}
+.nav-label{font-size:.7rem}
+.topbar-user b{font-size:.84rem}
+.topbar-user small{font-size:.76rem}
+.breadcrumbs,.header-links button{font-size:.84rem}
+.page-title h1{font-size:2.2rem}
+.page-title p{font-size:1.02rem}
+.section-card h2{font-size:1.25rem}
+.section-card p,.empty-state p{font-size:.92rem}

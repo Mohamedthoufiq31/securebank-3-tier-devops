@@ -1,0 +1,8 @@
+ALTER TABLE app_users ADD COLUMN email_verified BOOLEAN NOT NULL DEFAULT TRUE;
+CREATE TABLE email_verification_codes (
+  user_id UUID PRIMARY KEY REFERENCES app_users(id) ON DELETE CASCADE,
+  code_hash VARCHAR(255) NOT NULL,
+  expires_at TIMESTAMPTZ NOT NULL,
+  attempts INTEGER NOT NULL DEFAULT 0,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
